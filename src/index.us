@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Workflows with AngularJS</title>
+  <link rel="stylesheet" href="<%= css %>">
+  <script src="<%= js %>"></script>
+  <script>
+    angular.module("app").constant("CSRF_TOKEN", 'foobar');
+  </script>
+</head>
+<body>
+  <div class="row">
+    <div class="large-12">
+      <h1>End to End with Angular JS</h1>
+      <div class="row">
+        <div class="large-6 large-offset-3">
+          <div id="flash" class="alert-box alert" ng-show="flash">
+            {{ flash }}
+          </div>
+        </div>
+      </div>
+      <div id="view" ng-view></div>
+    </div>
+  </div>
+</body>
+</html>

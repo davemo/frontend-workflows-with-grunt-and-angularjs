@@ -1,0 +1,21 @@
+{
+  "name": "frontend-workflows-with-angularjs",
+  "version": "0.0.0",
+  "description": "README.md",
+  "main": "Gruntfile.js",
+  "repository": "",
+  "private": true,
+  "author": "david mosher",
+  "license": "BSD",
+  "dependencies": {
+    "grunt-contrib-uglify": "0.2.2",
+    "grunt-contrib-cssmin": "0.6.0",
+    "grunt-contrib-watch": "0.4.4",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-clean": "0.4.1",
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "express": "~3.2.6"
+  }
+}
