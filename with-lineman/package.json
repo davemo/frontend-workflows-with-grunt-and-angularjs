@@ -4,11 +4,13 @@
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "John Doe",
-    "company": "ACME, Inc."
+    "name": "David Mosher",
+    "company": "DAVEMO Consulting"
   },
   "dependencies": {
-    "lineman": "~0.7.1"
+    "lineman": "~0.7.1",
+    "grunt-angular-templates": "~0.3.8",
+    "grunt-ngmin": "0.0.2"
   },
   "engines": {
     "node": "~>0.10.5",
