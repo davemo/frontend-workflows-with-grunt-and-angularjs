@@ -23,6 +23,10 @@ module.exports = {
 
     app.get('/auth/logout', function (req, res) {
       res.json({ flash: "logged out"});
-    })
+    });
+
+    app.get('/auth/csrf_token', function(req, res) {
+      res.json({ csrf_token: 'weeeee' });
+    });
   }
 };
