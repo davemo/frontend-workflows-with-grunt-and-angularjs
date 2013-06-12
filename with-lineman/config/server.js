@@ -17,5 +17,12 @@ module.exports = {
     // app.get('/api/greeting/:message', function(req, res){
     //   res.json({ message: "OK, "+req.params.message });
     // });
+    app.post('/auth/login', function (req, res) {
+      res.json({ flash: "yay" });
+    });
+
+    app.get('/auth/logout', function (req, res) {
+      res.json({ flash: "logged out"});
+    })
   }
 };
