@@ -1,17 +1,17 @@
 angular.module("app").config(function($routeProvider) {
 
   $routeProvider.when('/login', {
-    templateUrl: 'templates/login.html',
+    templateUrl: 'angular/login.html',
     controller: 'LoginController'
   });
 
   $routeProvider.when('/home', {
-    templateUrl: 'templates/home.html',
+    templateUrl: 'angular/home.html',
     controller: 'HomeController'
   });
 
   $routeProvider.when('/books', {
-    templateUrl: 'templates/books.html',
+    template: 'angular/books.html',
     controller: 'BooksController',
     resolve: {
       books : function(BookService) {
