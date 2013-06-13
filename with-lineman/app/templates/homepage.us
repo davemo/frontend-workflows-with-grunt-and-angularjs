@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" ng-app="app">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title><%= pkg.name %></title>
   <link rel="stylesheet" href="<%= css %>">
 </head>
-<body>
+<body ng-cloak>
 
   <div class="row">
     <div class="large-12">
