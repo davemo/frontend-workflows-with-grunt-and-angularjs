@@ -7,8 +7,11 @@ module.exports = function(grunt) {
     },
 
     clean: {
+      dev: {
+        src: ['dev']
+      },
       dist: {
-        src: ['dev', 'dist']
+        src: ['dist']
       }
     },
 
