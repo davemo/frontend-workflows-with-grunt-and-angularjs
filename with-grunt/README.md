@@ -2,7 +2,9 @@
 
 TODO: link the screencast
 
-In the screencast we walked through some of the basic things needed to setup a simple workflow with Grunt. This result is complete enough to work for the most basic of projects, but lacks a few of the features we need to really make the most of a workflow that takes advantage of all of the features in an AngularJS application. This simple workflow includes:
+In the screencast we walked through some of the basic things needed to setup a simple workflow with Grunt. This result is complete enough to work for the most basic of projects, but lacks a few of the features we need to really make the most of a workflow that takes advantage of all of the features in an AngularJS application.
+
+This simple workflow includes:
 
 * a `dev` grunt task for development
 * a `dist` grunt task for bundling things up for production
