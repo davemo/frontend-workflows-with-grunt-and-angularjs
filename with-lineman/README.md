@@ -2,7 +2,7 @@
 
 
 
-This is the result of using [Lineman](http://www.linemanjs.com), a tool that utilizes Grunt, to craft our workflow to create a "First Class" client-side application. Lineman provides some quality-of-life improvements over the vanilla grunt configuration we created in the [Frontend Workflows with Grunt and Angular JS]() screencast, including:
+This is the result of using [Lineman](http://www.linemanjs.com), a tool that utilizes Grunt, to craft our workflow to create a "First Class" client-side application. Lineman provides some quality-of-life improvements over the vanilla grunt configuration we created in the [Frontend Workflows with Grunt and Angular JS](http://www.youtube.com/watch?v=fSAgFxjFSqY) screencast, including:
 
 * a way to proxy api requests to our [Laravel](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/tree/master/laravel-backend) backend
 * a set of sensible [default grunt tasks](https://github.com/testdouble/lineman/blob/master/config/application.coffee#L11)
