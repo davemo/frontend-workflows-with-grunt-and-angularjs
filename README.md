@@ -1,6 +1,6 @@
 # Frontend Workflows with Grunt and AngularJS
 
-
+http://www.youtube.com/watch?v=fSAgFxjFSqY
 
 The goal of this screencast and repository is to educate web developers on how to use Grunt to craft their own workflows, and examine some higher level tools that provide additional features that are helpful when creating rich-client web applications.
 
