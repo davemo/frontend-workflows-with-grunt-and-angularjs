@@ -11,6 +11,7 @@ This is the result of using [Lineman](http://www.linemanjs.com), a tool that uti
 
 # Installation Instructions
 
+* make sure you have lineman installed globally `npm install -g lineman`
 * once you have cloned this repo, `cd with-lineman`
 * `npm install` to get the ngmin and grunt-angular-templates task packages installed
 * `lineman run` to get things up and running
