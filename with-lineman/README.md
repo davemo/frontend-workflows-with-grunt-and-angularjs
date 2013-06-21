@@ -1,7 +1,5 @@
 # A frontend workflow using Lineman
 
-
-
 This is the result of using [Lineman](http://www.linemanjs.com), a tool that utilizes Grunt, to craft our workflow to create a "First Class" client-side application. Lineman provides some quality-of-life improvements over the vanilla grunt configuration we created in the [Frontend Workflows with Grunt and Angular JS](http://www.youtube.com/watch?v=fSAgFxjFSqY) screencast, including:
 
 * a way to proxy api requests to our [Laravel](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/tree/master/laravel-backend) backend
@@ -10,6 +8,12 @@ This is the result of using [Lineman](http://www.linemanjs.com), a tool that uti
 * some convention about [where files go](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/blob/master/with-lineman/config/files.js#L19) and [how tasks are executed](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/blob/master/with-lineman/config/application.js#L27)
 * preconfigured grunt plugins `ngmin` to minify and expand angular dependency declarations to their fully qualified format, and `grunt-angular-templates` to precompile our template files.
 * predefined command-line-interface with `run`, `build`, and `spec` commands
+
+# Installation Instructions
+
+* once you have cloned this repo, `cd with-lineman`
+* `npm install` to get the ngmin and grunt-angular-templates task packages installed
+* `lineman run` to get things up and running
 
 # Configuring Laravel to accept API requests from the Lineman Proxy
 
