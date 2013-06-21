@@ -1,4 +1,4 @@
-angular.module("app").config(function($routeProvider) {
+angular.module("app").config(function($routeProvider, $locationProvider) {
 
   $routeProvider.when('/login', {
     templateUrl: 'angular/login.html',
@@ -19,6 +19,8 @@ angular.module("app").config(function($routeProvider) {
       }
     }
   });
+
+  $locationProvider.html5Mode(true);
 
   $routeProvider.otherwise({ redirectTo: '/login' });
 

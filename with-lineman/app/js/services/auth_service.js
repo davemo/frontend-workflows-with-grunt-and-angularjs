@@ -22,14 +22,14 @@ angular.module("app").factory("AuthenticationService", function($http, $sanitize
 
   return {
     login: function(credentials) {
-      var login = $http.post("/auth/login", sanitizeCredentials(credentials));
+      var login = $http.post("/api/auth/login", sanitizeCredentials(credentials));
       login.success(cacheSession);
       login.success(FlashService.clear);
       login.error(loginError);
       return login;
     },
     logout: function() {
-      var logout = $http.get("/auth/logout");
+      var logout = $http.get("/api/auth/logout");
       logout.success(uncacheSession);
       return logout;
     },

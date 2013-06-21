@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/books', array('before' => 'auth', function() {
+Route::get('/api/books', array('before' => 'auth', function() {
   return Response::json(array(
     array('title' => 'Great Expectations', 'author' => 'Dickens'),
     array('title' => 'Foundation', 'author' => 'Asimov'),
@@ -21,11 +21,11 @@ Route::get('/books', array('before' => 'auth', function() {
   // return Response::json(array('flash' => 'Session expired'), 401);
 }));
 
-Route::get('/auth/csrf_token', function() {
+Route::get('/api/auth/csrf_token', function() {
   return Response::json(array('csrf_token' => csrf_token()));
 });
 
-Route::post('/auth/login', array('before' => 'csrf_json', 'uses' => 'AuthController@login'));
-Route::get('/auth/logout', 'AuthController@logout');
-Route::get('/auth/status', 'AuthController@status');
-Route::get('/auth/secrets','AuthController@secrets');
+Route::post('/api/auth/login', array('before' => 'csrf_json', 'uses' => 'AuthController@login'));
+Route::get('/api/auth/logout', 'AuthController@logout');
+Route::get('/api/auth/status', 'AuthController@status');
+Route::get('/api/auth/secrets','AuthController@secrets');
