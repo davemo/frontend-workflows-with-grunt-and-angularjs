@@ -11,7 +11,7 @@ angular.module("app").config(function($routeProvider) {
   });
 
   $routeProvider.when('/books', {
-    template: 'angular/books.html',
+    templateUrl: 'angular/books.html',
     controller: 'BooksController',
     resolve: {
       books : function(BookService) {
