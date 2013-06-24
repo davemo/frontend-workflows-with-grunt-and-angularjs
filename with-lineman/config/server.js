@@ -14,19 +14,16 @@
 
 module.exports = {
   drawRoutes: function(app) {
-    // app.get('/api/greeting/:message', function(req, res){
-    //   res.json({ message: "OK, "+req.params.message });
-    // });
-    // app.post('/auth/login', function (req, res) {
-    //   res.json({ flash: "yay" });
-    // });
+    app.post('/auth/login', function (req, res) {
+      res.json({ flash: "yay" });
+    });
 
-    // app.get('/auth/logout', function (req, res) {
-    //   res.json({ flash: "logged out"});
-    // });
+    app.get('/auth/logout', function (req, res) {
+      res.json({ flash: "logged out"});
+    });
 
-    // app.get('/auth/csrf_token', function(req, res) {
-    //   res.json({ csrf_token: 'weeeee' });
-    // });
+    app.get('/auth/csrf_token', function(req, res) {
+      res.json({ csrf_token: 'weeeee' });
+    });
   }
 };

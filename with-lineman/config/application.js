@@ -17,7 +17,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   //
   server: {
     apiProxy: {
-      enabled: true,
+      enabled: false,
       host: 'localhost',
       port: 3000
     }
@@ -26,7 +26,9 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // configure lineman to load additional angular related npm tasks
   loadNpmTasks: [
     "grunt-angular-templates",
-    "grunt-ngmin"
+    "grunt-ngmin",
+    "grunt-concat-sourcemap",
+    "grunt-contrib-copy"
   ],
 
   // configuration for grunt-angular-templates
@@ -49,18 +51,47 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     }
   },
 
+  removeTasks: {
+    common: ["concat", "handlebars"]
+  },
+
   // task override configuration
   prependTasks: {
     dist: ["ngmin"],         // ngmin should run in dist only
-    common: ["ngtemplates"] // ngtemplates runs in dist and dev
+    common: ["ngtemplates", "concat_sourcemap", "copy"] // ngtemplates runs in dist and dev
   },
 
   // grunt-angular-templates expects that a module already be defined to inject into
   // this configuration orders the template inclusion _after_ the app level module
-  concat: {
+  // concat: {
+  //   js: {
+  //     src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
+  //     separator: ";"
+  //   }
+  // },
+
+  copy: {
     js: {
-      src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
-      separator: ";"
+      files: [{
+        expand: true,
+        src: ['app/js/**', 'vendor/js/**'],
+        dest: 'generated/js'
+      }]
+    }
+  },
+
+  concat_sourcemap: {
+    js: {
+      src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.template.generated %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
+      dest: "<%= files.js.concatenated %>"
+    },
+    spec: {
+      src: ["<%= files.js.specHelpers %>", "<%= files.coffee.generatedSpecHelpers %>", "<%= files.js.spec %>", "<%= files.coffee.generatedSpec %>"],
+      dest: "<%= files.js.concatenatedSpec %>"
+    },
+    css: {
+      src: ["<%= files.less.generatedVendor %>", "<%= files.sass.generatedVendor %>", "<%= files.css.vendor %>", "<%= files.less.generatedApp %>", "<%= files.sass.generatedApp %>", "<%= files.css.app %>"],
+      dest: "<%= files.css.concatenated %>"
     }
   },
 
@@ -68,7 +99,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   watch: {
     ngtemplates: {
       files: "app/templates/**/*.html",
-      tasks: ["ngtemplates", "concat"]
+      tasks: ["ngtemplates", "concat_sourcemap"]
     }
   }
 
