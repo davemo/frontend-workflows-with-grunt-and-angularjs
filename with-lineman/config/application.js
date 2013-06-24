@@ -51,7 +51,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   },
 
   removeTasks: {
-    common: ["concat", "handlebars"]
+    common: ["concat", "handlebars", "jst"]
   },
 
   // task override configuration
