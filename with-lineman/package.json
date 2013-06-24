@@ -10,8 +10,7 @@
   "dependencies": {
     "grunt-angular-templates": "~0.3.8",
     "grunt-ngmin": "0.0.2",
-    "grunt-concat-sourcemap": "latest",
-    "grunt-contrib-copy": "latest"
+    "grunt-concat-sourcemap": "latest"
   },
   "engines": {
     "node": "~>0.10.5",

@@ -17,7 +17,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   //
   server: {
     apiProxy: {
-      enabled: false,
+      enabled: true,
       host: 'localhost',
       port: 3000
     }
@@ -27,8 +27,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   loadNpmTasks: [
     "grunt-angular-templates",
     "grunt-ngmin",
-    "grunt-concat-sourcemap",
-    "grunt-contrib-copy"
+    "grunt-concat-sourcemap"
   ],
 
   // configuration for grunt-angular-templates
@@ -58,29 +57,13 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // task override configuration
   prependTasks: {
     dist: ["ngmin"],         // ngmin should run in dist only
-    common: ["ngtemplates", "concat_sourcemap", "copy"] // ngtemplates runs in dist and dev
-  },
-
-  // grunt-angular-templates expects that a module already be defined to inject into
-  // this configuration orders the template inclusion _after_ the app level module
-  // concat: {
-  //   js: {
-  //     src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
-  //     separator: ";"
-  //   }
-  // },
-
-  copy: {
-    js: {
-      files: [{
-        expand: true,
-        src: ['app/js/**', 'vendor/js/**'],
-        dest: 'generated/js'
-      }]
-    }
+    common: ["ngtemplates", "concat_sourcemap"] // ngtemplates runs in dist and dev
   },
 
   concat_sourcemap: {
+    options: {
+      sourceRoot: '..'
+    },
     js: {
       src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.template.generated %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
       dest: "<%= files.js.concatenated %>"
@@ -99,7 +82,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   watch: {
     ngtemplates: {
       files: "app/templates/**/*.html",
-      tasks: ["ngtemplates", "concat_sourcemap"]
+      tasks: ["ngtemplates", "concat_sourcemap:js"]
     }
   }
 
