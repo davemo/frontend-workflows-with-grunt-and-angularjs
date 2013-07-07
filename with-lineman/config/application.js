@@ -57,12 +57,16 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // task override configuration
   prependTasks: {
     dist: ["ngmin"],         // ngmin should run in dist only
-    common: ["ngtemplates", "concat_sourcemap"] // ngtemplates runs in dist and dev
+    common: ["ngtemplates"] // ngtemplates runs in dist and dev
+  },
+
+  appendTasks: {
+    common: ["concat_sourcemap"]
   },
 
   concat_sourcemap: {
     options: {
-      sourceRoot: '..'
+      sourcesContent: true
     },
     js: {
       src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.template.generated %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
