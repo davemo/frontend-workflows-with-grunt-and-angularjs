@@ -8,6 +8,7 @@ This is the result of using [Lineman](http://www.linemanjs.com), a tool that uti
 * some convention about [where files go](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/blob/master/with-lineman/config/files.js#L19) and [how tasks are executed](https://github.com/davemo/frontend-workflows-with-grunt-and-angularjs/blob/master/with-lineman/config/application.js#L27)
 * preconfigured grunt plugins `ngmin` to minify and expand angular dependency declarations to their fully qualified format, and `grunt-angular-templates` to precompile our template files.
 * predefined command-line-interface with `run`, `build`, and `spec` commands
+* sourcemap generation with inlined sources via [`grunt-concat-sourcemap`](https://github.com/kozy4324/grunt-concat-sourcemap)
 
 # Installation Instructions
 
