@@ -1,10 +1,14 @@
-angular.element(document).ready(function() {
+(function() {
 
-  var app = angular.module("app");
+  var $injector = angular.injector(['ng']);
 
-  $.ajax({method: "GET", type: "json", url: "/auth/csrf_token"}).then(function(response) {
-    app.constant("CSRF_TOKEN", response.csrf_token);
-    angular.bootstrap(document, ['app']);
+  $injector.invoke(function($http, $rootScope) {
+    $rootScope.$apply(function() {
+      $http.get("/auth/csrf_token").then(function(response) {
+        angular.module("app").constant("CSRF_TOKEN", response.csrf_token);
+        angular.bootstrap(document, ['app']);
+      });
+    });
   });
 
-});
+})();

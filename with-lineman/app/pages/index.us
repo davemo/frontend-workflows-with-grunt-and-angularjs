@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title><%= pkg.name %></title>
-  <link rel="stylesheet" href="<%= css %>">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-cloak>
 
@@ -21,6 +21,6 @@
     </div>
   </div>
 
-  <script src="<%= js %>"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
