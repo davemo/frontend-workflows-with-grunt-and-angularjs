@@ -6,4 +6,4 @@ If you need instructions on how to get up and running with Laravel 4 on a Mac, y
 
 ## Running without NGINX
 
-Since the built in webserver case-insensitive headers issue was fixed in PHP core we can skip using nginx and simply run the laravel-backend with the following command: 'php artisan serve --port=3000 --host=127.0.0.1', this allows our proxied request from the lineman or grunt front-end to flow through correctly.
+Since the built in webserver case-insensitive headers issue was fixed in PHP core we can skip using nginx and simply run the laravel-backend with the following command: `php artisan serve --port=3000 --host=127.0.0.1`, this allows our proxied request from the lineman or grunt front-end to flow through correctly.
