@@ -1,11 +1,12 @@
-angular.module("app").factory("AuthenticationService", function($http, $sanitize, SessionService, FlashService, CSRF_TOKEN) {
+angular.module("app").factory("AuthenticationService", function($http, $sanitize, SessionService, FlashService) {
 
   var cacheSession   = function() {
     SessionService.set('authenticated', true);
   };
 
-  var uncacheSession = function() {
+  var uncacheSession = function(response) {
     SessionService.unset('authenticated');
+    FlashService.show(response.flash);
   };
 
   var loginError = function(response) {
@@ -15,8 +16,7 @@ angular.module("app").factory("AuthenticationService", function($http, $sanitize
   var sanitizeCredentials = function(credentials) {
     return {
       email: $sanitize(credentials.email),
-      password: $sanitize(credentials.password),
-      csrf_token: CSRF_TOKEN
+      password: $sanitize(credentials.password)
     };
   };
 
