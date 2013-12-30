@@ -16,77 +16,11 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // whatever service might be running on the specified port.
   //
   server: {
+    pushState: false,
     apiProxy: {
       enabled: true,
       host: 'localhost',
       port: 3000
-    }
-  },
-
-  // configure lineman to load additional angular related npm tasks
-  loadNpmTasks: [
-    "grunt-angular-templates",
-    "grunt-ngmin",
-    "grunt-concat-sourcemap"
-  ],
-
-  // configuration for grunt-angular-templates
-  ngtemplates: {
-    app: { // "app" matches the name of the angular module defined in app.js
-      options: {
-        base: "app/templates"
-      },
-      src: "app/templates/**/*.html",
-      // puts angular templates in a different spot than lineman looks for other templates in order not to conflict with the watch process
-      dest: "generated/angular/template-cache.js"
-    }
-  },
-
-  // configuration for grunt-ngmin, this happens _after_ concat once, which is the ngmin ideal :)
-  ngmin: {
-    js: {
-      src: "<%= files.js.concatenated %>",
-      dest: "<%= files.js.concatenated %>"
-    }
-  },
-
-  removeTasks: {
-    common: ["concat", "handlebars", "jst"]
-  },
-
-  // task override configuration
-  prependTasks: {
-    dist: ["ngmin"],         // ngmin should run in dist only
-    common: ["ngtemplates"] // ngtemplates runs in dist and dev
-  },
-
-  appendTasks: {
-    common: ["concat_sourcemap"]
-  },
-
-  concat_sourcemap: {
-    options: {
-      sourcesContent: true
-    },
-    js: {
-      src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.template.generated %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
-      dest: "<%= files.js.concatenated %>"
-    },
-    spec: {
-      src: ["<%= files.js.specHelpers %>", "<%= files.coffee.generatedSpecHelpers %>", "<%= files.js.spec %>", "<%= files.coffee.generatedSpec %>"],
-      dest: "<%= files.js.concatenatedSpec %>"
-    },
-    css: {
-      src: ["<%= files.less.generatedVendor %>", "<%= files.sass.generatedVendor %>", "<%= files.css.vendor %>", "<%= files.less.generatedApp %>", "<%= files.sass.generatedApp %>", "<%= files.css.app %>"],
-      dest: "<%= files.css.concatenated %>"
-    }
-  },
-
-  // configures grunt-watch-nospawn to listen for changes to, and recompile angular templates
-  watch: {
-    ngtemplates: {
-      files: "app/templates/**/*.html",
-      tasks: ["ngtemplates", "concat_sourcemap:js"]
     }
   }
 

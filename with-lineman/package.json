@@ -1,6 +1,6 @@
 {
-  "name": "frontend-workflows-with-angular-js",
-  "title": "An HTML/JS/CSS app",
+  "name": "lineman-angular-template",
+  "title": "An HTML/JS/CSS app using Angular.JS",
   "version": "0.0.1",
   "private": true,
   "author": {
@@ -8,9 +8,12 @@
     "company": "DAVEMO Consulting"
   },
   "dependencies": {
-    "grunt-angular-templates": "~0.3.8",
-    "grunt-ngmin": "0.0.3",
-    "grunt-concat-sourcemap": "~0.3.0"
+    "protractor": ">=0.8.0",
+    "jasmine-given": "~2.1.0",
+    "grunt": "~0.4.1",
+    "lineman": ">=0.19.2",
+    "lineman-angular": ">=0.0.2",
+    "coffee-script": "~1.6.3"
   },
   "engines": {
     "node": "~>0.10.5",
