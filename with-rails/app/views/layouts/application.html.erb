@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsBackend</title>
+  <%= stylesheet_link_tag "lineman/app" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= yield %>
+
+  <%= javascript_include_tag "lineman/app" %>
+</body>
+</html>

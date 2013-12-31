@@ -1,4 +1,4 @@
-angular.module("app").factory("AuthenticationService", function($http, $sanitize, SessionService, FlashService) {
+angular.module("app").factory("AuthenticationService", function($http, SessionService, FlashService) {
 
   var cacheSession   = function() {
     SessionService.set('authenticated', true);
@@ -11,13 +11,6 @@ angular.module("app").factory("AuthenticationService", function($http, $sanitize
 
   var loginError = function(response) {
     FlashService.show(response.flash);
-  };
-
-  var sanitizeCredentials = function(credentials) {
-    return {
-      email: $sanitize(credentials.email),
-      password: $sanitize(credentials.password)
-    };
   };
 
   return {
