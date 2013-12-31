@@ -22,7 +22,7 @@ angular.module("app").factory("AuthenticationService", function($http, $sanitize
 
   return {
     login: function(credentials) {
-      var login = $http.post("/auth/login", sanitizeCredentials(credentials));
+      var login = $http.post("/auth/login", credentials);
       login.success(cacheSession);
       login.success(FlashService.clear);
       login.error(loginError);
