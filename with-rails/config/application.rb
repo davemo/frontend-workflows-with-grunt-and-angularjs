@@ -9,6 +9,7 @@ Bundler.require(:default, Rails.env)
 module RailsBackend
   class Application < Rails::Application
     I18n.enforce_available_locales = true
+    config.rails_lineman.lineman_project_location = "lineman-frontend"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
