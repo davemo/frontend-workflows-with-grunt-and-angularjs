@@ -12,7 +12,7 @@
       <h1>Frontend Workflows with Angular JS</h1>
       <div class="row">
         <div class="large-6 large-offset-3">
-          <div id="flash" class="alert-box alert" ng-show="flash">
+          <div id="flash" class="alert-box alert ng-cloak" ng-show="flash">
             {{ flash }}
           </div>
         </div>
