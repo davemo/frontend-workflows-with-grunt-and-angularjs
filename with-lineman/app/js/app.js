@@ -1,1 +1,1 @@
-angular.module("app", ['ngSanitize']);
+angular.module("app", ['ngSanitize', 'ngRoute']);

@@ -11,12 +11,15 @@
     "protractor": ">=0.8.0",
     "jasmine-given": "~2.1.0",
     "grunt": "~0.4.1",
-    "lineman": ">=0.19.2",
+    "lineman": "0.29.3",
     "lineman-angular": ">=0.0.2",
     "coffee-script": "~1.6.3"
   },
   "engines": {
     "node": "~>0.10.5",
     "npm": "~>1.2.18"
+  },
+  "devDependencies": {
+    "lineman-less": "0.0.1"
   }
 }

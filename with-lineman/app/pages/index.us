@@ -5,7 +5,7 @@
   <title><%= pkg.name %></title>
   <link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-cloak ng-app="app">
+<body ng-cloak>
 
   <div class="row">
     <div class="large-12">
